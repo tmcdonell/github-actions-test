@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-18.04
+          - os: ubuntu-latest
             ghc: "8.8"
             llvm: "9"
             cuda: "10-2"

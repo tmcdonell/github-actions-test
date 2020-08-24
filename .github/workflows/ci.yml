@@ -62,7 +62,7 @@ jobs:
     - name: Setup (Linux)
       if: runner.os == 'Linux'
       run: |
-        sudo apt-get -y install llvm-${{ matrix.llvm }}-dev
+        # sudo apt-get -y install llvm-${{ matrix.llvm }}-dev
         wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
         sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
         sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
@@ -91,4 +91,8 @@ jobs:
     # - name: Build dependencies
     #   run: |
     #     stack build $STACK_FLAGS --test --no-run-tests --only-dependencies
+
+    - name: Test
+      run: |
+        which nvcc
 
